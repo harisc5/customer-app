@@ -1,5 +1,6 @@
 controller\CustomerController.class
+configuration\WebConfig.class
 entity\Customer.class
 repository\CustomerRepository.class
-Application.class
+Application\Application.class
 filter\CustomerFilter.class
