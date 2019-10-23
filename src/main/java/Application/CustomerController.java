@@ -1,14 +1,12 @@
-package controller;
+package Application;
 
-import entity.Customer;
-import filter.CustomerFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import repository.CustomerRepository;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/customer")
 public class CustomerController {
 
     @Autowired
@@ -28,7 +26,7 @@ public class CustomerController {
 
     @PostMapping("/search")
     public List<Customer> findByFirstName(@RequestBody CustomerFilter customerFilter) {
-        List<Customer> customers = customerRepository.findByFirstName(customerFilter.toString());
+        List<Customer> customers = customerRepository.findByFirstName(customerFilter.getFirstName());
         return customers;
     }
 }

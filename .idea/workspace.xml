@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a0118d8-ff9e-4a8c-b4df-9beb7ffa369e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/vjezba.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/configuration/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/filter/CustomerFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/CustomerFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Application/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Application/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Application/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/configuration/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/controller/CustomerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/entity/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/filter/CustomerFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/repository/CustomerRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/vjezba-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/vjezba-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vjezba.iml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,6 +55,15 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Haris\Desktop\vjezba\src\main\java" />
+      <recent name="C:\Users\Haris\Desktop\vjezba\src\main\resources" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -86,7 +106,8 @@
       <workItem from="1571640761415" duration="537000" />
       <workItem from="1571641319089" duration="5807000" />
       <workItem from="1571649564175" duration="2184000" />
-      <workItem from="1571654533499" duration="896000" />
+      <workItem from="1571654533499" duration="10593000" />
+      <workItem from="1571816457502" duration="2379000" />
     </task>
     <servers />
   </component>
