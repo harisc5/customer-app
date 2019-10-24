@@ -1,8 +1,6 @@
-configuration\WebConfig.class
-entity\Customer$CustomerBuilder.class
-controller\CustomerController.class
-entity\Customer.class
-repository\CustomerRepository.class
+Application\CustomerService.class
+Application\CustomerController.class
+Application\CustomerFilter.class
+Application\CustomerRepository.class
+Application\Customer.class
 Application\Application.class
-exception\ResourceNotFoundException.class
-filter\CustomerFilter.class
