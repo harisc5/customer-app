@@ -9,7 +9,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "customer")
 @Data
-@Builder
 public class Customer implements Serializable {
 
     @Id
@@ -21,4 +20,5 @@ public class Customer implements Serializable {
 
     @Column(name = "lastname")
     private String lastName;
+
 }
