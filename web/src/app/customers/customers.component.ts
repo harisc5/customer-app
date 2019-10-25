@@ -18,11 +18,15 @@ export class CustomersComponent implements OnInit {
     }
 
   applyFilter() {
+    console.log("usao u filter");
       return this.httpService
         .get("/customer/getAll")
         .subscribe(response => {
+          console.log(response);
           this.customerData = [];
+          console.log("dosao do results");
           const results = Array.isArray(response) ? Array.from(response) : [];
+          console.log(results);
           if (results.length > 0) {
             for (const obj of results) {
               console.log(this.customerData);
