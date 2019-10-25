@@ -20,7 +20,7 @@ public class CustomerController {
         return "Successfully saved";
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/getAll")
     public List<Customer> getAll() {
         return customerService.getAllCustomers();
 

@@ -1,5 +1,5 @@
-<div class="nav">
- <h2>Welcome to the customer registration form</h2>
+<div>
+    <h2>Welcome to the customer registration form</h2>
   <div class="mvc-grid">
     <table class="table table-hover fixed table-responsive card">
       <thead class="panel-heading-clearfix">
@@ -8,13 +8,12 @@
       </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of customerData">
-          <td class="col-md-3">{{item.id}}</td>
-          <td class="col-md-3">{{item.firstName}}</td>
-          <td class="col-md-3">{{item.lastName}}</td>
-        </tr>
+      <tr *ngFor="let item of customerData">
+        <td class="col-md-3">{{item.id}}</td>
+        <td class="col-md-3">{{item.firstName}}</td>
+        <td class="col-md-3">{{item.lastName}}</td>
+      </tr>
       </tbody>
-      <button class="btn btn-sm btn-primary edit-button" title="Save" (click)="applyFilter()"></button>
     </table>
   </div>
 </div>

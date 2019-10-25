@@ -1,10 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CustomersComponent } from './customers/customers.component';
-import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {AppComponent} from './app.component';
+import {CustomersComponent} from './customers/customers.component';
+import {HttpClientModule} from "@angular/common/http";
 import {HttpService} from "./services/http/http-service";
 import {RouterModule} from "@angular/router";
 
@@ -18,7 +16,7 @@ import {RouterModule} from "@angular/router";
     HttpClientModule,
     RouterModule.forRoot([
       {
-        path:'customer/findAll',
+        path:'customers/all',
         component:CustomersComponent
       }
     ])

@@ -18,21 +18,19 @@ export class CustomersComponent implements OnInit {
     }
 
   applyFilter() {
-      return this.httpService.get("/customer/findAll")
+      return this.httpService
+        .get("/customer/getAll")
         .subscribe(response => {
           this.customerData = [];
           const results = Array.isArray(response) ? Array.from(response) : [];
           if (results.length > 0) {
             for (const obj of results) {
+              console.log(this.customerData);
               this.customerData.push(obj);
             }
           }
         }, error => {
-            alert(JSON.parse(JSON.stringify(error)).error);
+            console.log(error);
           });
     }
-
-
-
-
 }

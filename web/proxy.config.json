@@ -1,0 +1,13 @@
+{
+  "/customers/all": {
+    "target": "http://localhost:8080/customer/getAll",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/customers/find": {
+    "target": "http://localhost:8080/customer/search",
+    "secure": false,
+    "logLevel": "debug"
+  }
+
+}
