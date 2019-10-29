@@ -6,6 +6,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {HttpService} from "./services/http/http-service";
 import {RouterModule} from "@angular/router";
 import { NavComponent } from './nav/nav.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,10 +19,11 @@ import { NavComponent } from './nav/nav.component';
     HttpClientModule,
     RouterModule.forRoot([
       {
-        path:'customers/all',
-        component:CustomersComponent
+        path: 'customers/all',
+        component: CustomersComponent
       }
-    ])
+    ]),
+    ReactiveFormsModule
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

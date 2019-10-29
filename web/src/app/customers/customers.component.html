@@ -1,4 +1,18 @@
 <div>
+  <div>
+    <form [formGroup]="firstNameFilter">
+      <div class="row">
+        <div class="col-md-3 form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" class="form-control" id="firstName"
+                 formControlName="firstName" placeholder="Enter first name">
+        </div>
+      </div>
+      <button class="pull-right btn btn-primary" type="submit" (click)="applyFilter()">
+        <i class="fa fa-search" aria-hidden="true"></i> Search
+      </button>
+    </form>
+  </div>
   <div class="mvc-grid">
     <table class="table table-hover fixed table-responsive card">
       <thead class="panel-heading-clearfix">

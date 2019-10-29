@@ -6,6 +6,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/customer")
+@CrossOrigin
 public class CustomerController {
 
     private final CustomerService customerService;
@@ -20,15 +21,13 @@ public class CustomerController {
         return "Successfully saved";
     }
 
-    @GetMapping("/getAll")
-    public List<Customer> getAll() {
-        return customerService.getAllCustomers();
-
-    }
-
-    @PostMapping("/search")
+    @PostMapping("/filter")
     public List<Customer> findByFirstName(@RequestBody CustomerFilter customerFilter) {
-         List<Customer> customerList = customerService.findCustomerByFirstName(customerFilter);
+        String firstName = customerFilter.getFirstName();
+        if(firstName == null){
+            return customerService.getAllCustomers();
+        }
+         List<Customer> customerList = customerService.findCustomerByFirstName(firstName);
          return customerList;
     }
 }

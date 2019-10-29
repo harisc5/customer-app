@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from "../services/http/http-service";
 import {Customer} from "../types/customer/customer";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-customers',
@@ -10,6 +11,9 @@ import {Customer} from "../types/customer/customer";
 export class CustomersComponent implements OnInit {
   private columnsToDisplay = ['Id','First Name', 'Last Name'];
   private customerData: Customer[] = [];
+  private firstNameFilter = new FormGroup({
+    firstName: new FormControl(null)
+  });
 
   constructor(private httpService: HttpService){}
 
@@ -20,16 +24,14 @@ export class CustomersComponent implements OnInit {
   applyFilter() {
     console.log("usao u filter");
       return this.httpService
-        .get("/customer/getAll")
+        .post("http://localhost:8080/customer/filter",this.firstNameFilter.value)
         .subscribe(response => {
-          console.log(response);
           this.customerData = [];
-          console.log("dosao do results");
           const results = Array.isArray(response) ? Array.from(response) : [];
           console.log(results);
           if (results.length > 0) {
             for (const obj of results) {
-              console.log(this.customerData);
+              console.log(obj);
               this.customerData.push(obj);
             }
           }
@@ -37,4 +39,5 @@ export class CustomersComponent implements OnInit {
             console.log(error);
           });
     }
+
 }

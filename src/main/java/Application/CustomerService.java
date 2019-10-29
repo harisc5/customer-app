@@ -20,7 +20,7 @@ public class CustomerService {
         customerRepository.save(customer);
     }
 
-    public List<Customer> findCustomerByFirstName(CustomerFilter customerFilter){
-        return customerRepository.getByFirstName(customerFilter.getFirstName());
+    public List<Customer> findCustomerByFirstName(String firstName){
+        return customerRepository.getByFirstName(firstName);
     }
 }
