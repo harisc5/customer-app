@@ -7,7 +7,7 @@
                  formControlName="firstName" placeholder="Enter first name">
         </div>
       </div>
-      <button class="btn-primary" type="submit" (click)="applyFilter()">
+      <button class="btn-search" type="submit" (click)="applyFilter()">
         <i class="btn fa fa-search" aria-hidden="true"></i>
       </button>
     </form>
@@ -18,6 +18,7 @@
         <thead class="panel-heading-clearfix">
         <tr>
           <th *ngFor="let column of columnsToDisplay">{{column}}</th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
@@ -25,6 +26,11 @@
           <td>{{item.id}}</td>
           <td>{{item.firstName}}</td>
           <td>{{item.lastName}}</td>
+          <td>
+            <button class="btn-delete" type="submit" (click)="openDelete(item.id)">
+              <i class="fa fa-trash" aria-hidden="true"></i>
+            </button>
+          </td>
         </tr>
         </tbody>
       </table>
@@ -63,6 +69,23 @@
           Save
         </button>
       </form>
+    </div>
+  </div>
+</div>
+<!--DELETE MODAL-->
+<div *ngIf="displayDeleteModal" class="table-responsive">
+  <div class="modal"></div>
+  <div class="dialog">
+    <div class="dialog-header">
+      <button type="button" class="close close-dialog" aria-label="Close" (click)="closeModal()"><span
+        aria-hidden="true">&times;</span>
+      </button>
+      <p class="dialog-title">Delete customer</p>
+    </div>
+    <div class="dialog-body">
+      <p class="dialog-message">Are you sure that you want to delete customer with id: {{this.selectedId}} ?</p>
+      <button class="col-sm-3 btn-primary pull-right dialog-button" (click)="deleteCustomer(this.selectedId)">Delete</button>
+      <button class="col-sm-3 btn-secondary pull-right dialog-button" (click)="closeModal()">Cancel</button>
     </div>
   </div>
 </div>

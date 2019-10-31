@@ -12,6 +12,8 @@ export class CustomersComponent implements OnInit {
   private columnsToDisplay = ['Id', 'First Name', 'Last Name'];
   private customerData: Customer[] = [];
   private displayAdd: boolean = false;
+  private displayDeleteModal: boolean = false;
+  private selectedId: number;
   private firstNameFilter = new FormGroup({
     firstName: new FormControl(null)
   });
@@ -46,17 +48,9 @@ export class CustomersComponent implements OnInit {
       });
   }
 
-  openModal() {
-    this.displayAdd = true;
-  }
-
-  closeModal(){
-    this.displayAdd = false;
-  }
-
-  saveCustomer(){
-    return this.httpService.post("http://localhost:8080/customer/create",this.customerForm.value)
-      .subscribe( message => {
+  saveCustomer() {
+    return this.httpService.post("http://localhost:8080/customer/create", this.customerForm.value)
+      .subscribe(message => {
           alert(JSON.parse(JSON.stringify(message)).message);
           console.log(message);
           this.closeModal();
@@ -65,5 +59,36 @@ export class CustomersComponent implements OnInit {
         error => {
           alert(JSON.parse(JSON.stringify(error)).error);
         });
+  }
+
+  deleteCustomer(id) {
+    this.httpService.delete('http://localhost:8080/customer/delete/' + id).subscribe(
+      response => {
+        if (response) {
+          alert("Delete customer with id:" + id);
+          this.closeModal();
+          this.applyFilter();
+        } else {
+          alert("Failed to delete customer with id:" + id);
+        }
+      },
+      error => {
+        alert(JSON.parse(JSON.stringify(error)).error);
+      }
+    );
+  }
+
+  openModal() {
+    this.displayAdd = true;
+  }
+
+  openDelete(id) {
+    this.displayDeleteModal = true;
+    this.selectedId = id;
+  }
+
+  closeModal() {
+    this.displayAdd = false;
+    this.displayDeleteModal = false;
   }
 }
