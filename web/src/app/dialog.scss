@@ -1,3 +1,11 @@
+.disabled {
+  color: darkgrey
+}
+
+.enabled {
+  color: #2980b9
+}
+
 .bottom-margin {
   margin-bottom: 15px;
 }
@@ -6,10 +14,27 @@
   padding-top: 2.5%;
 }
 
+.edit-button {
+  margin-left: 15px;
+}
+
+.alert-danger {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
 .add-button {
   margin-right: 1%;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.icon-margins {
+  margin-left: 4%;
+  margin-right: 4%;
+  height: 100%;
 }
 
 .header-text {
@@ -90,7 +115,4 @@
   background-size: cover;
   display: block;
   z-index: 90;
-}
-#firstName{
-  height: 40px;
 }

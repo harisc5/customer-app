@@ -1,32 +1,68 @@
 <div>
-  <div>
+  <div class="panel-body">
     <form [formGroup]="firstNameFilter">
       <div class="row">
         <div class="col-md-3 form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" class="form-control" id="firstName"
+          <input type="text" class="form-control" id="firstName" class="input-size"
                  formControlName="firstName" placeholder="Enter first name">
         </div>
       </div>
-      <button class="pull-right btn btn-primary" type="submit" (click)="applyFilter()">
-        <i class="fa fa-search" aria-hidden="true"></i> Search
+      <button class="btn-primary" type="submit" (click)="applyFilter()">
+        <i class="btn fa fa-search" aria-hidden="true"></i>
       </button>
     </form>
   </div>
-  <div class="mvc-grid">
-    <table class="table table-hover fixed table-responsive card">
-      <thead class="panel-heading-clearfix">
-      <tr>
-        <th *ngFor="let column of columnsToDisplay">{{column}}</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let item of customerData">
-        <td class="col-md-3">{{item.id}}</td>
-        <td class="col-md-3">{{item.firstName}}</td>
-        <td class="col-md-3">{{item.lastName}}</td>
-      </tr>
-      </tbody>
-    </table>
+  <hr>
+  <div>
+      <table class="table table-bordered">
+        <thead class="panel-heading-clearfix">
+        <tr>
+          <th *ngFor="let column of columnsToDisplay">{{column}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of customerData">
+          <td>{{item.id}}</td>
+          <td>{{item.firstName}}</td>
+          <td>{{item.lastName}}</td>
+        </tr>
+        </tbody>
+      </table>
+    <button class="btn-add" type="submit" (click)="openModal()">
+      <i class="btn fa fa-plus" aria-hidden="true"></i>
+    </button>
+    </div>
+</div>
+<div *ngIf="displayAdd">
+  <div class="modal"></div>
+  <div class="dialog">
+    <div class="dialog-header">
+      <button type="button" class="pull-right" aria-label="Close dialog" (click)="closeModal()"><span
+        aria-hidden="true">&times;</span>
+      </button>
+      <p class="dialog-title">
+        Add new customer
+      </p>
+    </div>
+    <div class="dialog-body">
+      <form [formGroup]="customerForm">
+        <div class="col-sm-20">
+          <div class="form-group">
+            <label class="control-label">First Name</label>
+            <input formControlName="firstName" placeholder="Enter first name" type="input"
+                   class="form-control">
+          </div>
+        </div><div class="col-sm-20">
+          <div class="form-group">
+            <label class="control-label">Last Name</label>
+            <input formControlName="lastName" placeholder="Enter last name" type="input"
+                   class="form-control">
+          </div>
+        </div>
+        <button class="col-sm-3 btn-primary pull-right" (click)="saveCustomer()">
+          Save
+        </button>
+      </form>
+    </div>
   </div>
 </div>

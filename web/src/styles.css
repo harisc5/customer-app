@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./assets/font-awesome-4.7.0/css/font-awesome.min.css";
+@import "app/dialog.scss";
+@import "~bootstrap";
+
+.panel-body {
+  padding-top: 15px;
+}
+
+.table thead, .table thead th {
+  text-align: center;
+}
+
+.btn-add {
+  background-color: darkgreen;
+}
+.input-size{
+  height: 25px;
+  width: 300px;
+}
+.container{
+  width: 80%;
+}
+.btn {
+  padding: 8px 15px 8px 15px;
+  width: 70px;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+body{
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+table{
+  text-align: center;
+}

@@ -9,18 +9,23 @@ public class CustomerService {
 
     private final CustomerRepository customerRepository;
 
-    CustomerService(CustomerRepository customerRepository){
+    CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
-    public List<Customer> getAllCustomers(){
+
+    public List<Customer> getAllCustomers() {
         return customerRepository.findAll();
     }
 
-    public void saveCustomer(Customer customer){
+    public void saveCustomer(Customer customer) {
         customerRepository.save(customer);
     }
 
-    public List<Customer> findCustomerByFirstName(String firstName){
+    public List<Customer> findCustomerByFirstName(String firstName) {
         return customerRepository.getByFirstName(firstName);
+    }
+
+    public void deleteCustomer(Long id) {
+        customerRepository.deleteById(id);
     }
 }

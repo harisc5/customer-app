@@ -19,7 +19,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     RouterModule.forRoot([
       {
-        path: 'customers/all',
+        path: '',
         component: CustomersComponent
       }
     ]),
