@@ -23,7 +23,7 @@ public class CustomerController {
         final String messageKey = "message";
         JSONObject response = new JSONObject();
 
-        customerService.saveCustomer(customer);
+        customerService.saveCustomer(capitalizeCustomer(customer));
         response.put(messageKey, "Successfully saved new customer");
 
         return response;
@@ -40,14 +40,21 @@ public class CustomerController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public boolean deleteById(@PathVariable long id){
+    public boolean deleteById(@PathVariable long id) {
         try {
             customerService.deleteCustomer(id);
             return true;
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             log.error("Error while deleting customer" + e.getMessage());
             return false;
         }
+    }
+
+    private Customer capitalizeCustomer(Customer customer) {
+        Customer customerCap = new Customer();
+        customerCap.setFirstName(customer.getFirstName().toUpperCase());
+        customerCap.setLastName(customer.getLastName().toUpperCase());
+
+        return customerCap;
     }
 }

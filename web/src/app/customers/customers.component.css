@@ -77,7 +77,7 @@
 }
 
 .dialog-header {
-  background-color: rgb(93, 119, 254);
+  background-color: #007bff;
   border-radius: 4px 4px 0px 0px;
 }
 
@@ -115,6 +115,7 @@
   display: block;
   z-index: 90;
 }
-#firstName{
+
+#firstName {
   height: 40px;
 }

@@ -9,36 +9,44 @@
   text-align: center;
 }
 
-.btn-add {
-  background-color: darkgreen;
-}
-.input-size{
+.input-size {
   height: 25px;
-  width: 300px;
+  width: 250px;
 }
-.container{
+
+.container {
   width: 80%;
 }
+
 .btn {
-  color:white;
   padding: 8px 15px 8px 15px;
   width: 70px;
   height: 30px;
   margin-bottom: 5px;
+  color: white;
 }
 
-body{
-  padding-top: 50px;
+body {
   padding-bottom: 100px;
+  background-color: azure;
 }
-table{
+
+table {
   text-align: center;
+  background-color: lightgoldenrodyellow;
 }
-.btn-delete{
-  background-color: rgb(93, 119, 254);
+
+.btn-delete {
+  background-color: #007bff;
   width: 40px;
   color:white;
 }
-.btn-search{
-  background-color: rgb(93, 119, 254);
+
+.btn-search {
+  background-color: #007bff;
+}
+
+.btn-add {
+  background-color: darkgreen;
+  width: 15%;
 }

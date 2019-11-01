@@ -9,7 +9,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./customers.component.css']
 })
 export class CustomersComponent implements OnInit {
-  private columnsToDisplay = ['Id', 'First Name', 'Last Name'];
+  private columnsToDisplay = ['ID', 'FIRST NAME', 'LAST NAME'];
   private customerData: Customer[] = [];
   private displayAdd: boolean = false;
   private displayDeleteModal: boolean = false;

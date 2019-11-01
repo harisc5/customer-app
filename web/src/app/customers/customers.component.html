@@ -1,6 +1,6 @@
 <div>
   <div class="panel-body">
-    <form [formGroup]="firstNameFilter">
+    <form [formGroup]="firstNameFilter" class="form-inline">
       <div class="row">
         <div class="col-md-3 form-group">
           <input type="text" class="form-control" id="firstName" class="input-size"
@@ -14,30 +14,30 @@
   </div>
   <hr>
   <div>
-      <table class="table table-bordered">
-        <thead class="panel-heading-clearfix">
-        <tr>
-          <th *ngFor="let column of columnsToDisplay">{{column}}</th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let item of customerData">
-          <td>{{item.id}}</td>
-          <td>{{item.firstName}}</td>
-          <td>{{item.lastName}}</td>
-          <td>
-            <button class="btn-delete" type="submit" (click)="openDelete(item.id)">
-              <i class="fa fa-trash" aria-hidden="true"></i>
-            </button>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    <table class="table table-bordered table-hover">
+      <thead class="panel-heading-clearfix">
+      <tr>
+        <th *ngFor="let column of columnsToDisplay">{{column}}</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of customerData">
+        <td>{{item.id}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>
+          <button class="btn-delete" type="submit" (click)="openDelete(item.id)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
     <button class="btn-add" type="submit" (click)="openModal()">
       <i class="btn fa fa-plus" aria-hidden="true"></i>
     </button>
-    </div>
+  </div>
 </div>
 <div *ngIf="displayAdd">
   <div class="modal"></div>
@@ -58,7 +58,8 @@
             <input formControlName="firstName" placeholder="Enter first name" type="input"
                    class="form-control">
           </div>
-        </div><div class="col-sm-20">
+        </div>
+        <div class="col-sm-20">
           <div class="form-group">
             <label class="control-label">Last Name</label>
             <input formControlName="lastName" placeholder="Enter last name" type="input"
@@ -84,8 +85,13 @@
     </div>
     <div class="dialog-body">
       <p class="dialog-message">Are you sure that you want to delete customer with id: {{this.selectedId}} ?</p>
-      <button class="col-sm-3 btn-primary pull-right dialog-button" (click)="deleteCustomer(this.selectedId)">Delete</button>
+      <button class="col-sm-3 btn-primary pull-right dialog-button" (click)="deleteCustomer(this.selectedId)">Delete
+      </button>
       <button class="col-sm-3 btn-secondary pull-right dialog-button" (click)="closeModal()">Cancel</button>
     </div>
   </div>
 </div>
+<hr>
+<footer>
+  <p>© Haris Cehic, 2019</p>
+</footer>
