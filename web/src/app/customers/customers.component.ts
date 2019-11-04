@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpService} from "../services/http/http-service";
 import {Customer} from "../types/customer/customer";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-customers',
@@ -31,13 +31,11 @@ export class CustomersComponent implements OnInit {
   }
 
   applyFilter() {
-    console.log("usao u filter");
     return this.httpService
       .post("http://localhost:8080/customer/filter", this.firstNameFilter.value)
       .subscribe(response => {
         this.customerData = [];
         const results = Array.isArray(response) ? Array.from(response) : [];
-        console.log(results);
         if (results.length > 0) {
           for (const obj of results) {
             this.customerData.push(obj);
@@ -51,8 +49,7 @@ export class CustomersComponent implements OnInit {
   saveCustomer() {
     return this.httpService.post("http://localhost:8080/customer/create", this.customerForm.value)
       .subscribe(message => {
-          alert(JSON.parse(JSON.stringify(message)).message);
-          console.log(message);
+          alert("Successfully saved new customer");
           this.closeModal();
           this.applyFilter();
         },
@@ -65,7 +62,7 @@ export class CustomersComponent implements OnInit {
     this.httpService.delete('http://localhost:8080/customer/delete/' + id).subscribe(
       response => {
         if (response) {
-          alert("Delete customer with id:" + id);
+          alert("Delete customer with id: " + id);
           this.closeModal();
           this.applyFilter();
         } else {

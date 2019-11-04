@@ -1,7 +1,6 @@
 package Application;
 
 import lombok.extern.slf4j.Slf4j;
-import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -19,14 +18,8 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public JSONObject customerCreate(@RequestBody Customer customer) {
-        final String messageKey = "message";
-        JSONObject response = new JSONObject();
-
+    public void customerCreate(@RequestBody Customer customer) {
         customerService.saveCustomer(capitalizeCustomer(customer));
-        response.put(messageKey, "Successfully saved new customer");
-
-        return response;
     }
 
     @PostMapping("/filter")
@@ -52,8 +45,10 @@ public class CustomerController {
 
     private Customer capitalizeCustomer(Customer customer) {
         Customer customerCap = new Customer();
-        customerCap.setFirstName(customer.getFirstName().toUpperCase());
-        customerCap.setLastName(customer.getLastName().toUpperCase());
+        String fname = customer.getFirstName().substring(0, 1).toUpperCase() + customer.getFirstName().substring(1).toLowerCase();
+        String lname = customer.getLastName().substring(0, 1).toUpperCase() + customer.getLastName().substring(1).toLowerCase();
+        customerCap.setFirstName(fname);
+        customerCap.setLastName(lname);
 
         return customerCap;
     }

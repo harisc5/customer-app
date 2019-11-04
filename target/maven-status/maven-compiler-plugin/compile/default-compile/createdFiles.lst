@@ -3,4 +3,5 @@ Application\CustomerController.class
 Application\CustomerFilter.class
 Application\CustomerRepository.class
 Application\Customer.class
+Application\WebConfig.class
 Application\Application.class
