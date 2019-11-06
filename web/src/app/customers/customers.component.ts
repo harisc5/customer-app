@@ -34,6 +34,7 @@ export class CustomersComponent implements OnInit {
     return this.httpService
       .post("http://localhost:8080/customer/filter", this.firstNameFilter.value)
       .subscribe(response => {
+        this.firstNameFilter.reset();
         this.customerData = [];
         const results = Array.isArray(response) ? Array.from(response) : [];
         if (results.length > 0) {
@@ -44,7 +45,6 @@ export class CustomersComponent implements OnInit {
       }, error => {
         console.log(error);
       });
-    this.firstNameFilter.reset();
   }
 
   saveCustomer() {
