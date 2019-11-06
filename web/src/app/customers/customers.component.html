@@ -1,0 +1,97 @@
+<div>
+  <div class="panel-body">
+    <form [formGroup]="firstNameFilter" class="form-inline">
+      <div class="row">
+        <div class="col-md-3 form-group">
+          <input type="text" class="form-control" id="firstName" class="input-size"
+                 formControlName="firstName" placeholder="Enter first name">
+        </div>
+      </div>
+      <button class="btn-search" type="submit" (click)="applyFilter()">
+        <i class="btn fa fa-search" aria-hidden="true"></i>
+      </button>
+    </form>
+  </div>
+  <hr>
+  <div>
+    <table class="table table-bordered table-hover">
+      <thead class="panel-heading-clearfix">
+      <tr>
+        <th *ngFor="let column of columnsToDisplay">{{column}}</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of customerData">
+        <td>{{item.id}}</td>
+        <td>{{item.firstName}}</td>
+        <td>{{item.lastName}}</td>
+        <td>
+          <button class="btn-delete" type="submit" (click)="openDelete(item.id)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn-add" type="submit" (click)="openModal()">
+      <i class="btn fa fa-plus" aria-hidden="true"></i>
+    </button>
+  </div>
+</div>
+<div *ngIf="displayAdd">
+  <div class="modal"></div>
+  <div class="dialog">
+    <div class="dialog-header">
+      <button type="button" class="pull-right" aria-label="Close dialog" (click)="closeModal()"><span
+        aria-hidden="true">&times;</span>
+      </button>
+      <p class="dialog-title">
+        Add new customer
+      </p>
+    </div>
+    <div class="dialog-body">
+      <form [formGroup]="customerForm">
+        <div class="col-sm-20">
+          <div class="form-group">
+            <label class="control-label">First Name</label>
+            <input formControlName="firstName" placeholder="Enter first name" type="input"
+                   class="form-control">
+          </div>
+        </div>
+        <div class="col-sm-20">
+          <div class="form-group">
+            <label class="control-label">Last Name</label>
+            <input formControlName="lastName" placeholder="Enter last name" type="input"
+                   class="form-control">
+          </div>
+        </div>
+        <button class="col-sm-3 btn-primary pull-right" (click)="saveCustomer()">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<!--DELETE MODAL-->
+<div *ngIf="displayDeleteModal" class="table-responsive">
+  <div class="modal"></div>
+  <div class="dialog">
+    <div class="dialog-header">
+      <button type="button" class="close close-dialog" aria-label="Close" (click)="closeModal()"><span
+        aria-hidden="true">&times;</span>
+      </button>
+      <p class="dialog-title">Delete customer</p>
+    </div>
+    <div class="dialog-body">
+      <p class="dialog-message">Are you sure that you want to delete customer with id: {{this.selectedId}} ?</p>
+      <button class="col-sm-3 btn-primary pull-right dialog-button" (click)="deleteCustomer(this.selectedId)">Delete
+      </button>
+      <button class="col-sm-3 btn-secondary pull-right dialog-button" (click)="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+<hr>
+<footer>
+  <p>© Haris Cehic, 2019</p>
+</footer>

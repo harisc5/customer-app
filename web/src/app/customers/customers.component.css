@@ -1,0 +1,121 @@
+.disabled {
+  color: darkgrey
+}
+
+.enabled {
+  color: #2980b9
+}
+
+.bottom-margin {
+  margin-bottom: 15px;
+}
+
+.panel-body {
+  padding-top: 2.5%;
+}
+
+.edit-button {
+  margin-left: 15px;
+}
+
+.alert-danger {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.add-button {
+  margin-right: 1%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.icon-margins {
+  margin-left: 4%;
+  margin-right: 4%;
+  height: 100%;
+}
+
+.header-text {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.modal {
+  background-color: #000000;
+  opacity: 0.6;
+  background-size: cover;
+  display: block;
+  z-index: 90;
+}
+
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  height: auto;
+  width: 30%;
+  background-color: white;
+  border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+.large-dialog {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 100;
+  height: auto;
+  width: 30%;
+  background-color: white;
+  border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+.dialog-header {
+  background-color: #007bff;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.dialog-title {
+  color: white;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.dialog-body {
+  padding: 10px;
+}
+
+.dialog-button {
+  margin-top: 10px;
+  margin-right: 15px;
+}
+
+.close-dialog {
+  width: 55px;
+  height: 2em;
+  padding: 0px;
+  margin: 0px;
+}
+
+.dialog-message {
+  margin-left: 5%;
+  font-size: 1.2em;
+}
+
+.modal {
+  background-color: #000000;
+  opacity: 0.6;
+  background-size: cover;
+  display: block;
+  z-index: 90;
+}
+
+#firstName {
+  height: 40px;
+}
