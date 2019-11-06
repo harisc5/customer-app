@@ -18,8 +18,9 @@ public class CustomerController {
     }
 
     @PostMapping("/create")
-    public void customerCreate(@RequestBody Customer customer) {
+    public Boolean customerCreate(@RequestBody Customer customer) {
         customerService.saveCustomer(capitalizeCustomer(customer));
+        return true;
     }
 
     @PostMapping("/filter")

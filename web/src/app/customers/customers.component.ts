@@ -49,9 +49,10 @@ export class CustomersComponent implements OnInit {
   saveCustomer() {
     return this.httpService.post("http://localhost:8080/customer/create", this.customerForm.value)
       .subscribe(message => {
-          alert("Successfully saved new customer");
+          alert("Successfully saved customer");
           this.closeModal();
           this.applyFilter();
+          this.customerForm.reset();
         },
         error => {
           alert(JSON.parse(JSON.stringify(error)).error);
