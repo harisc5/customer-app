@@ -44,6 +44,7 @@ export class CustomersComponent implements OnInit {
       }, error => {
         console.log(error);
       });
+    this.firstNameFilter.reset();
   }
 
   saveCustomer() {

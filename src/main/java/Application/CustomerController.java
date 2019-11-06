@@ -26,7 +26,7 @@ public class CustomerController {
     @PostMapping("/filter")
     public List<Customer> findByFirstName(@RequestBody CustomerFilter customerFilter) {
         String firstName = customerFilter.getFirstName();
-        if (firstName == null) {
+        if (firstName == null || firstName.isEmpty()) {
             return customerService.getAllCustomers();
         }
         List<Customer> customerList = customerService.findCustomerByFirstName(firstName);
